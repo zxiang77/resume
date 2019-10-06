@@ -1,0 +1,209 @@
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Deedy - One Page Two Column Resume
+% LaTeX Template
+% Version 1.1 (30/4/2014)
+%
+% Original author:
+% Debarghya Das (http://debarghyadas.com)
+%
+% Original repository:
+% https://github.com/deedydas/Deedy-Resume
+%
+% IMPORTANT: THIS TEMPLATE NEEDS TO BE COMPILED WITH XeLaTeX
+%
+% This template uses several fonts not included with Windows/Linux by
+% default. If you get compilation errors saying a font is missing, find the line
+% on which the font is used and either change it to a font included with your
+% operating system or comment the line out to use the default font.
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 
+% TODO:
+% 1. Integrate biber/bibtex for article citation under publications.
+% 2. Figure out a smoother way for the document to flow onto the next page.
+% 3. Add styling information for a "Projects/Hacks" section.
+% 4. Add location/address information
+% 5. Merge OpenFont and MacFonts as a single sty with options.
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% CHANGELOG:
+% v1.1:
+% 1. Fixed several compilation bugs with \renewcommand
+% 2. Got Open-source fonts (Windows/Linux support)
+% 3. Added Last Updated
+% 4. Move Title styling into .sty
+% 5. Commented .sty file.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Known Issues:
+% 1. Overflows onto second page if any column's contents are more than the
+% vertical limit
+% 2. Hacky space on the first bullet point on the second column.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[]{deedy-resume-openfont}
+
+\usepackage{enumerate}
+\usepackage{enumitem}
+\setlist[enumerate]{noitemsep, topsep=0pt}
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%     LAST UPDATED DATE
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \lastupdated
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%     TITLE NAME
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\namesection{Zili}{Xiang}{
+\href{mailto:zx77@cornell.edu}{zx77@cornell.edu} | 607.882.0196 \\ \textbullet{  Github:// \href{https://github.com/zxiang77}{\custombold{zxiang77}} }
+\textbullet{ LinkedIn://  \href{https://www.linkedin.com/in/zili-xiang-31a59890}{\custombold{zili-xiang}} }
+\textbullet{ Website:// \href{https://zxiang77.github.io/zx.blog/}{\custombold{zx.blog}} }\textbullet{}
+\textbullet{ Medium:// 
+\href{https://medium.com/@zx77}{\custombold{zx77}} }\textbullet{}
+\\
+Jersey City, NJ, 07310}
+% 1366 Sajak Avenue San Jose, CA 95131
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%     COLUMN ONE
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     EDUCATION
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Education}
+\runsubsection{Cornell University}
+\newline
+\descriptx{MPS in Information Science}
+\location{ | Graduated in May 2017 | GPA: 3.6 | Ithaca, NY}
+\sectionsep
+\descriptx{BS in Landscape Architecture}
+\location{| Graduated in May 2016 | GPA: 3.5 | Ithaca, NY }
+\sectionsep
+
+\runsubsection{Shanghai Jiao Tong
+University}\\
+\descriptx{Major in Landscape Architecture}
+\location{Sep. 2011 - Dec. 2013 | Shanghai, China}
+\sectionsep
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%     EXPERIENCE     %%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Experience}
+\runsubsection{Software Engineer}
+\descript{ | IBM Security MaaS360 }
+\location{July. 2019 - Now | Blue Bell, PA }
+% netty. Java
+\textbullet{ Improved the performance and robustness from earlier product by adopting Netty framework } \\
+\begin{enumerate}[label=$\diamond$]
+    \item Better memory management with byte buffer and reference counting technique
+    \item Reduced network communication overhead and improved throughput by adopting event based asynchronous processing on network data
+\end{enumerate}
+\textbullet{ Maintained a gateway to enable secure and reliable connection to enterprise resource on mobile device } \\
+\textbullet{ Designed and developed proxy client to connect to gateway via SOCK5 }\\
+\begin{enumerate}[label=$\diamond$]
+    \item Realized validation against corporate authentication methods (LDAP or AD) before establishing connection with gateway over customized SOCKS5 initialization process
+    \item Implemented the mechanism utilizing asymmetric encryption to verify user identity 
+\end{enumerate}
+\textbullet{ Troubleshot production issues from customers and released patches to solve customer issues } \\
+% designed authentication flow
+\runsubsection{Software Engineer}
+\descript{ | IBM Cloud Billing }
+\location{Feb. 2018 - July. 2019 | Dallas, TX }
+\textbullet{Maintained and optimized a billing batch system, which runs every day to generate invoice to bill customers}
+\begin{enumerate}[label=$\diamond$]
+    \item Created an audit tool to detect billing data anomalies and distribute heavy workload into sub-processes with zookeeper
+    \item Designed and implemented automatic error handling mechanism on the batch system
+\end{enumerate}
+\textbullet{Developed full stack on IBM Cloud IaaS infrastructure management system with PHP back-end and JavaScript front-end}
+\begin{enumerate}[label=$\diamond$]
+    \item Expanded capability of the system to support accounting personnel to gain visibility into the billing system and perform daily operations
+    \item Developed SOAP API to expand the capability of an MVC model based management system
+    \item Improved front end experience by implementing asynchronous requests with Ajax
+    \item Improved memory utilization on metric monitoring page (reducing memory consumption by 75\%) by optimizing memory leaking code
+    \item Maintained business data with Oracle DB and managed DDL with a migration system
+\end{enumerate}
+
+\runsubsection{Teaching Assistant}
+\descript{| Intermediate Web Programming}
+\location{Jan. 2017 – May 2017 | Ithaca, NY}
+\textbullet{ Held weekly office hours helping with debugging JavaScript, PHP and SQL} \\
+\textbullet{ Prepared weekly discussion and taught back-end technologies (SQL, PHP, phpMyAdmin, JavaScript, jQuery, Ajax and HTML)} \\
+\sectionsep
+\vspace{\topsep}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     PROJECTS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Relevant Projects}
+\runsubsection{Price Crawler}
+\lang{ Java, Spring Boot, Docker }
+\location{ September 2019 - Now | Bluebell, PA }
+\textbullet{ Designed and developed a crawler to crawl price data for items on online shopping platforms }\\
+\textbullet{ Implemented app layer with Spring Boot, which provides RESTful APIs to access data in H2 database } \\
+\textbullet{ Built Dockerfile to run application instance in a Docker container } \\
+\vspace{\topsep}
+
+% \runsubsection{Secure Container Registry}
+% \lang{Kubernetes, Hyperledger Fabric}
+% \location{ June 2018 - September 2018 | Dallas, TX }
+% \textbullet{ Designed and developed blockchain with Hyperledger Fabric to store CVE(Common Vulnerability and Exposure) information of registries to avoid malicious exploitation of Registry CVE information }\\
+% \textbullet{ Deployed Hyperledger Fabric blockchain components(Orderer, CA, peers, etc.) on Kubernetes }
+% \vspace{\topsep}
+
+\runsubsection{ Computer Graphics + Practicum }
+\lang{OpenGL(GLSL, WebGL) and Java}
+\location{Jan. 2017 - May 2017 | Ithaca, NY}
+\textbullet{ Reduced running time complexity of ray tracing from $O(n^2)$ to $O(n\log n)$ by implementing KD tree algorithm }\\
+% \textbullet{ Implemented frame buffer and skybox for Maze Crawler animation rendering }\\
+\textbullet{ WebGL related projects are up on \href{https://zxiang77.github.io/zx.blog/}{\custombold{my website}} as Water simulation and Maze Crawler }
+% \textbullet{ Visualized historical development data of all countries with WebGL (it's now on \href{http://zilixiang.me}{\custombold{my personal website}}) }\\
+% \vspace{\topsep}
+
+% \runsubsection{ Clipboard Manager }
+% \lang{ Electron, Node }
+% \location{April 2018 - June 2018 | Dallas, TX }
+% \textbullet{ Designed and implemented an interface to manage clipboard history and helped optimize copy-paste-intensive workflow }\\
+% \textbullet{ Utilized Node AddOn iohook to listen to keyboard events }
+% \vspace{\topsep}
+
+\sectionsep
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     SKILLS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Relevant Skills}
+Java \textbullet{} Spring Boot \textbullet{} Gradle \textbullet{} Netty  \textbullet{} Python \textbullet{}
+OpenGL (GLSL and WebGL)
+\textbullet{} PHP \textbullet{} CSS \textbullet{} HTML
+ \textbullet{} SQL \textbullet{} JavaScript
+ \textbullet{} Test Driven Development  \textbullet{}
+Docker \textbullet{} Kubernetes \textbullet{} Rust
+\sectionsep 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%     COLUMN TWO
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}
+%\documentclass[]{article}
